@@ -1,11 +1,17 @@
 // const express = require('express')
-import express from 'express'
+import express, { urlencoded } from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
+import { ApiResponse } from './utils/api-response.js'
 
 dotenv.config({path:"./.env"})
 
 const app = express()
+
+app.use(express.json({limit:"16kb"}))
+app.use(urlencoded({limit:"16kb"}))
+app.use(cookieParser())
 
  app.use(cors({
      origin:process.env.ORIGIN
@@ -248,6 +254,13 @@ const port = process.env.PORT
 
 app.get('/', (req, res) => {
     res.send(data)
+})
+
+app.post('/user',(req,res)=> {
+//    const name = req.body
+//    const pass  = req.body
+  const {email , pass} = req.body
+   return res.status(200).json(new ApiResponse(200,{user:email,pass} , "user data received successfully"))
 })
 
 app.get('/persons/:id', (req, res) => {
