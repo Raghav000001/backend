@@ -22,3 +22,14 @@
   -- urlencoded()
   -- cookieParser()
   -- express.static()
+
+  **DAY 4**
+
+  - basics of express routing
+  - intro to controllers
+  - add a healthCheck api endpoint and test it in postman
+  - intro to mongoose
+  - quick tour to mongodb atlas and connect to db to our application
+
+
+
