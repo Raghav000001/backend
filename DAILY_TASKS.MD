@@ -31,5 +31,10 @@
   - intro to mongoose
   - quick tour to mongodb atlas and connect to db to our application
 
+**DAY 5**
+
+- MONGO DB recap
+- ip whitelisting 
+- data modeling with mongoose (practice models)
 
 
